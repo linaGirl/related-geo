@@ -141,7 +141,7 @@
 		it('Using the distanceFrom selector', function(done) {
 			db.venue(['*', Related.select('distance').distanceFrom(46, 7)], {
 				distance: Related.lt(5000000)
-			}).limit(10).find(done);			
+			}).order('distance').limit(10).find(done);			
 		});
 	});
 

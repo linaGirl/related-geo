@@ -1,7 +1,7 @@
 {
       "name"                        : "related-geo"
     , "description"                 : "extensions for doeing area, distance searches using lat/lng fields"
-    , "version"                     : "0.1.1"
+    , "version"                     : "0.1.2"
     , "homepage"                    : "https://github.com/eventEmitter/related-geo"
     , "author"                      : "Michael van der Weg <michael@joinbox.com> (http://joinbox.com/)"
     , "licence"                     : "mit"
