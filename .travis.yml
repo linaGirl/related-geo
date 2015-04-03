@@ -8,3 +8,7 @@ node_js :
 
 addons:
     postgresql: "9.3"
+
+before_script:
+  - psql -f test/db.create.postgres.sql -U postgres
+  - psql -f test/db.postgres.sql -U postgres
