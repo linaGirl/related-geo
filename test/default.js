@@ -131,6 +131,13 @@
 					, name 	: 'venue_'+index
 				}).save();
 			})).then(function() {
+				return Promise.all(Array.apply(null, {length:100}).map(function(item, index) {
+					return new db.event({
+						  name 		: 'event_'+index
+						, id_venue  : Math.ceil(Math.random()*100)
+					}).save();
+				}));
+			}).then(function() {
 				done();
 			}).catch(done);
 		});
@@ -141,7 +148,13 @@
 		it('Using the distanceFrom selector', function(done) {
 			db.venue(['*', Related.select('distance').distanceFrom(46, 7)], {
 				distance: Related.lt(5000000)
-			}).order('distance').limit(10).find(done);			
+			}).order('distance').limit(10).find(done);
+		});
+
+		it('Using the distanceFrom selector on another entity', function(done) {
+			db.event(['*', Related.select('distance').distanceFrom('venue', 46, 7)], {
+				distance: Related.lt(5000000)
+			}).debug().order('distance').limit(10).find(done);
 		});
 	});
 

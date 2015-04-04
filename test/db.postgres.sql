@@ -10,3 +10,12 @@ CREATE TABLE related_geo_test.venue (
     , "lng"             decimal(10,2) NOT NULL
     , CONSTRAINT "pk_venue" PRIMARY KEY (id)
 );
+
+
+CREATE TABLE related_geo_test.event (
+      id                serial NOT NULL
+    , id_venue          int
+    , name              varchar(100)
+    , CONSTRAINT "pk_event" PRIMARY KEY (id)
+    , CONSTRAINT "fk_venue" FOREIGN KEY (id_venue) REFERENCES "related_geo_test".venue ON UPDATE CASCADE ON DELETE CASCADE
+);
