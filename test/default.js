@@ -5,12 +5,11 @@
 	var   log 			= require('ee-log')
 		, assert 		= require('assert')
 		, fs 			= require('fs')
-		, Related 			= require('related');
+		, Related 		= require('related');
 
 
 
 	var   RelatedGEO = require('../')
-		, Promise = (Promise || require('es6-promise').Promise)
 		, sqlStatments
 		, extension
 		, related
@@ -154,7 +153,7 @@
 		it('Using the distanceFrom selector on another entity', function(done) {
 			db.event(['*', Related.select('distance').distanceFrom('venue', 46, 7)], {
 				distance: Related.lt(5000000)
-			}).debug().order('distance').limit(10).find(done);
+			}).order('distance').limit(10).find(done);
 		});
 	});
 

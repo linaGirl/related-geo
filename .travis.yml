@@ -1,9 +1,7 @@
 language: node_js
 
 node_js : 
-    - "0.10"
-    - "0.12"
-    - "iojs"
+    - "v4"
 
 
 addons:
@@ -12,3 +10,7 @@ addons:
 before_script:
   - psql -f test/db.create.postgres.sql -U postgres
   - psql -f test/db.postgres.sql -U postgres
+
+
+
+sudo: false
