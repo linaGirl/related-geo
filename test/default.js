@@ -1,3 +1,5 @@
+(function() {
+	'use strict';
 
 	process.env.debug_sql = true;
 
@@ -53,21 +55,22 @@
 		});
 
 		it('should be able to drop & create the testing schema ('+sqlStatments.length+' raw SQL queries)', function(done) {
-			related.getDatabase('related_geo_test').getConnection(function(err, connection) {
-				if (err) done(err);
-				else {
-					Promise.all(sqlStatments.map(function(sql) {
-						return new Promise(function(resolve, reject) {
-							connection.queryRaw(sql, function(err) {
-								if (err) reject(err);
-								else resolve();
-							});
-						});
-					})).then(function() {
-						done();
-					}).catch(done)
-				}//async.each(sqlStatments, connection.queryRaw.bind(connection), done);
-			});
+			related.getDatabase('related_geo_test').getConnection('write').then((connection) => {
+                return new Promise((resolve, reject) => {
+                    let exec = (index) => {
+                        if (sqlStatments[index]) {
+                            connection.query(sqlStatments[index]).then(() => {
+                                exec(index + 1);
+                            }).catch(reject);
+                        }
+                        else resolve();
+                    }
+
+                    exec(0);
+                });
+            }).then(() => {
+                done();
+            }).catch(done);
 		});
 	});
 
@@ -158,3 +161,5 @@
 	});
 
 
+
+})();

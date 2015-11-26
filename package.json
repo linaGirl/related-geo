@@ -1,7 +1,7 @@
 {
       "name"                        : "related-geo"
     , "description"                 : "extensions for doeing area, distance searches using lat/lng fields"
-    , "version"                     : "1.0.0"
+    , "version"                     : "2.0.0"
     , "homepage"                    : "https://github.com/eventEmitter/related-geo"
     , "author"                      : "Michael van der Weg <michael@joinbox.com> (http://joinbox.com/)"
     , "licence"                     : "mit"
@@ -10,7 +10,7 @@
         , "type"                    : "git"
     }
     , "engines": {
-        "node"                      : ">=v0.10.17"
+        "node"                      : ">=v4.2.1"
     }
     , "bugs": {
         "url"                       : "https://github.com/eventEmitter/related-geo/issues"
@@ -25,7 +25,7 @@
     } 
     , "devDependencies": {
           "mocha"                   : "2.x"
-        , "related"                 : "1.x"
+        , "related"                 : "2.x"
     }
     , "optionalDependencies": {}
     , "keywords"                    : ["related", "orm", "geo"]
