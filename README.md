@@ -1,5 +1,7 @@
 # related-geo
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/eventEmitter/related-geo.svg)](https://greenkeeper.io/)
+
 Lets you filter and order records by their GPS position.
 
 
