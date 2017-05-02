@@ -17,14 +17,14 @@
     }
     , "dependencies": {
           "ee-class"                : "1.x"
-        , "ee-types"                : "1.x"
+        , "ee-types"                : "^2.1.2"
         , "related-selector"        : "1.x"
         , "related-extension"       : "1.x"
-        , "ee-log"                  : "0.3.x"
-        , "ee-event-emitter"        : "0.3.x"
+        , "ee-log"                  : "~2.0.2"
+        , "ee-event-emitter"        : "~1.0.1"
     } 
     , "devDependencies": {
-          "mocha"                   : "2.x"
+          "mocha"                   : "^3.3.0"
         , "related"                 : "2.x"
     }
     , "optionalDependencies": {}
